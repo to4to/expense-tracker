@@ -95,7 +95,13 @@ dailyExpenseSummary=[];
 
       if (dailyExpenseSummary.containsKey(date)) {
         double currentAmount = dailyExpenseSummary[date]!;
+        currentAmount += amount;
+        dailyExpenseSummary[date] = currentAmount;
+      } else {
+        dailyExpenseSummary.addAll({date: amount});
       }
     }
+
+    return dailyExpenseSummary;
   }
 }
