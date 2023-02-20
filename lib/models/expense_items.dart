@@ -7,7 +7,7 @@ class ExpenseItem {
   ExpenseItem(
     this.name,
     this.amount,
-    this.dateTime,
+    this.dateTime, {required name, required DateTime dateTime, required String amount},
   );
 
 

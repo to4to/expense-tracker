@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uptil_expense1/data/expense_data.dart';
+import 'package:uptil_expense1/models/expense_items.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,7 +53,23 @@ class _HomePageState extends State<HomePage> {
 
 //save
 
-  void save() {}
+  void save() {
+
+//create Expense item
+
+ExpenseItem newExpense=ExpenseItem(
+  name: newExpenseNameController.text,
+ amount: newExpenseAmountController.text,
+  dateTime: DateTime.now());
+
+
+
+Provider.of<ExpenseData>(context,listen: false).addNewExpense(newExpense);
+
+
+
+
+  }
 
 //cancel
 
