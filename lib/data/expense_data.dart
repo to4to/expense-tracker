@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:uptil_expense1/dateTime/date_time_helper.dart';
 
 import '../models/expense_items.dart';
 
-class ExpenseData {
+class ExpenseData extends ChangeNotifier {
   //list of All Expenses
 
   List<ExpenseItem> overAllExpenseList = [];

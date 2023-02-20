@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
               content: Column(mainAxisSize: MainAxisSize.min, children: [
                 //expense name
                 TextField(
-                  controller: newExpenseAmountController,
+                  controller: newExpenseNameController,
                 ),
 
                 //expense amount
@@ -31,8 +31,30 @@ class _HomePageState extends State<HomePage> {
                   controller: newExpenseAmountController,
                 )
               ]),
+              actions: [
+//save Button
+                MaterialButton(
+                  onPressed: save,
+                  child:const Text('Save'),
+                ),
+
+                MaterialButton(
+                  onPressed: cancel,
+                  child:const Text('Cancel'),
+                )
+
+//cancel Button
+              ],
             ));
   }
+
+//save
+
+  void save() {}
+
+//cancel
+
+  void cancel() {}
 
   @override
   Widget build(BuildContext context) {
