@@ -38,12 +38,12 @@ class _HomePageState extends State<HomePage> {
 //save Button
                 MaterialButton(
                   onPressed: save,
-                  child:const Text('Save'),
+                  child: const Text('Save'),
                 ),
 
                 MaterialButton(
                   onPressed: cancel,
-                  child:const Text('Cancel'),
+                  child: const Text('Cancel'),
                 )
 
 //cancel Button
@@ -54,21 +54,14 @@ class _HomePageState extends State<HomePage> {
 //save
 
   void save() {
-
 //create Expense item
 
-ExpenseItem newExpense=ExpenseItem(
-  name: newExpenseNameController.text,
- amount: newExpenseAmountController.text,
-  dateTime: DateTime.now());
+    ExpenseItem newExpense = ExpenseItem(
+        name: newExpenseNameController.text,
+        amount: newExpenseAmountController.text,
+        dateTime: DateTime.now());
 
-
-
-Provider.of<ExpenseData>(context,listen: false).addNewExpense(newExpense);
-
-
-
-
+    Provider.of<ExpenseData>(context, listen: false).addNewExpense(newExpense);
   }
 
 //cancel
@@ -83,6 +76,13 @@ Provider.of<ExpenseData>(context,listen: false).addNewExpense(newExpense);
         onPressed: addNewExpense,
         child: const Icon(Icons.add),
       ),
+
+
+      body: ListView.builder(itemBuilder: (context,index)=>ListTile(
+
+
+        
+      )),
     );
   }
 }

@@ -4,13 +4,9 @@ class ExpenseItem {
   final String amount;
   final DateTime dateTime;
 
-  ExpenseItem(
-    this.name,
-    this.amount,
-    this.dateTime, {required name, required DateTime dateTime, required String amount},
-  );
-
-
-
-  
+  ExpenseItem({
+   required this.name,
+    required this.amount,
+  required  this.dateTime,
+  });
 }
